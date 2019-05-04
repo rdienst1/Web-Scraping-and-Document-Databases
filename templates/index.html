@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+    <title>Mission to Mars</title>
+  </head>
+  <main class="main bg-light">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+        <div class="container bg-light">
+      <div class="py-5 text-center">
+        <h1 class="display-3 text-muted">Mission to Mars</h1></br>
+        <button type="button" class="btn btn-outline-danger" href="/scrape">Scrape New Data</button>
+
+</div>
+</div>
+
+<div class="row bg-dark">
+        <div class="col-lg">
+                <p class="h2 text-white">Latest Mars News</p>
+                <h4>{{listings.news_title}}</h4>
+                <p>{{listings.news_p}}</p>
+            </div>
+    <div class="col-12 col-md-8">
+            <p class="h2 text-white">Featured Mars Image</p>
+            <a href={{listings.featured_image_url}}>
+
+
+        </div>
+    <div class="col-6 col-md-4">
+            <p class="h4 text-white">Current Weather on Mars</p>
+            <p>{{listings.mars_weather}}</p>
+
+            <p class="h4 text-white">Mars Facts</p>
+            <p>{{listings.mars_weather}}</p>
+
+
+    </div>
+  </div>
+  
+  <div class="container">
+        <p class="h2 text-white">Mars Hemispheres</p>
+        {% for x in listings.hemisphere_image_urls %}   
+        <div class="col-md-6">
+                 <p class="h4">{{x.title}}</p>
+            <a href={{x.img_url}}>
+                    <img class="img-responsive" src={{x.img_url}}  style="width:100%">
+                  </a>
+        </div>
+        {% endfor %}
+       </div>
+</main>
+</body>
+
+
+</html>
